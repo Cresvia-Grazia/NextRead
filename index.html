@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookReserve | Premium Book Collection</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .book-card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-600">📘 BookReserve</h1>
+            <div class="space-x-4">
+                <input type="text" placeholder="Search books..." class="border rounded-lg px-4 py-2 text-sm focus:outline-blue-500">
+            </div>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-3xl font-extrabold text-gray-800">Available Titles</h2>
+        <p class="text-gray-500">Secure your copy by reserving online.</p>
+    </header>
+
+    <main id="book-grid" class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div class="animate-pulse bg-gray-200 h-64 rounded-xl"></div>
+        <div class="animate-pulse bg-gray-200 h-64 rounded-xl"></div>
+    </main>
+
+    <div id="res-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+            <h3 id="modal-title" class="text-xl font-bold mb-4">Reserve Book</h3>
+            <form id="reservation-form" class="space-y-4">
+                <input type="hidden" id="book-id">
+                <input type="text" placeholder="Full Name" class="w-full border p-3 rounded-lg" required>
+                <div class="grid grid-cols-2 gap-4">
+                    <input type="email" placeholder="Email" class="border p-3 rounded-lg" required>
+                    <input type="tel" placeholder="Phone" class="border p-3 rounded-lg" required>
+                </div>
+                <input type="number" placeholder="Quantity" min="1" class="w-full border p-3 rounded-lg" required>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700">Confirm Reservation</button>
+                <button type="button" onclick="closeModal()" class="w-full text-gray-500 text-sm">Cancel</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Logic to fetch from Google Apps Script API and render cards
+        // Logic to handle form submission to BookRes_DB
+    </script>
+</body>
+</html>
